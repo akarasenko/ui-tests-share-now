@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.MainPage;
-import pages.RegistrationPage;
+import pages.EmailValidationTest;
 
 
 import java.io.File;
@@ -20,7 +20,7 @@ public class Application {
     WebDriverWait wait;
     Properties properties;
 
-    public RegistrationPage registrationPage;
+    public EmailValidationTest emailValidationTest;
     public MainPage mainPage;
 
     public Application() throws IOException {
@@ -29,14 +29,14 @@ public class Application {
         options.addArguments("--lang=en-US");
 
         driver = new ChromeDriver(options);
-        wait = new WebDriverWait(driver, 3);
+        wait = new WebDriverWait(driver, 10);
 
         properties = new Properties();
         FileReader file = new FileReader(new File(String.format("src/test/resources/%s.properties", System.getProperty("target", "local"))));
         properties.load(file);
 
         mainPage = new MainPage(driver, wait, properties);
-        registrationPage = new RegistrationPage(driver, wait, properties);
+        emailValidationTest = new EmailValidationTest(driver, wait, properties);
     }
 
 

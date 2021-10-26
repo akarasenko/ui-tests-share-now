@@ -19,3 +19,4 @@ gradle-app.setting
 /allure-reports/
 /.idea/
 '.idea' 
+/gradle/

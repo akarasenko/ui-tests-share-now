@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Email field validation">
+    <test name="Empty email test">
+        <parameter name="email" value=""/>
+        <parameter name="expectedHint" value="This field is required."/>
+        <classes>
+            <class name="tests.EmailValidationTest">
+                <methods>
+                    <include name="EmailValidationTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Wrong format email test">
+        <parameter name="email" value="email"/>
+        <parameter name="expectedHint" value="Please enter your email address in this format: yourname@example.com"/>
+        <classes>
+            <class name="tests.EmailValidationTest">
+                <methods>
+                    <include name="EmailValidationTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
