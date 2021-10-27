@@ -1,6 +1,5 @@
 package helpers;
 
-import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -13,7 +12,6 @@ import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 
 public class ScreenSaver {
 
-    @Attachment(value = "Page screenshot", type = "image/png")
     public static String takeScreenshot(WebDriver driver, String fileName) {
         File tempFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         String folderPath = new File("").getAbsolutePath() + File.separator + "screenshots";
@@ -23,7 +21,7 @@ public class ScreenSaver {
             vsFile.mkdir();
         }
 
-        File screen = new File(folderPath + File.separator + fileName + ".png");
+        File screen = new File(folderPath + File.separator + fileName + Long.toString(System.currentTimeMillis()) + ".png");
 
         try {
             Files.move(tempFile.toPath(), screen.toPath(), REPLACE_EXISTING);

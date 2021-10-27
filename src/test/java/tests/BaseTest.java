@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Attachment;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -15,6 +16,7 @@ public class BaseTest {
         app = new Application();
     }
 
+    @Attachment(value = "Page screenshot", type = "image/png")
     @AfterMethod
     public void stop(ITestResult result) {
         if (ITestResult.FAILURE == result.getStatus()) {
