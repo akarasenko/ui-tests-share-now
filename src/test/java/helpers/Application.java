@@ -21,7 +21,7 @@ public class Application {
     WebDriverWait wait;
     Properties properties;
 
-    public RegistrationPage emailValidationTest;
+    public RegistrationPage registrationPage;
     public MainPage mainPage;
 
     public Application() throws IOException {
@@ -49,7 +49,7 @@ public class Application {
         properties.load(file);
 
         mainPage = new MainPage(driver, wait, properties);
-        emailValidationTest = new RegistrationPage(driver, wait, properties);
+        registrationPage = new RegistrationPage(driver, wait, properties);
     }
 
     public void quit() {

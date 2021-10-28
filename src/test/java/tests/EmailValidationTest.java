@@ -11,10 +11,10 @@ public class EmailValidationTest extends BaseTest {
         app.mainPage.open();
         app.mainPage.clickOnJoinButton();
 
-        app.emailValidationTest.fillEmailField(email);
-        app.emailValidationTest.submitForm();
+        app.registrationPage.fillEmailField(email);
+        app.registrationPage.submitForm();
 
-        Assert.assertEquals(app.emailValidationTest.getErrorHintEmail(), expectedHint);
+        Assert.assertEquals(app.registrationPage.getErrorHintEmail(), expectedHint);
     }
 }
 

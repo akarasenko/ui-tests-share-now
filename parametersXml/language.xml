@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Language field test">
+    <test name="Default language">
+        <parameter name="defaultLanguage" value="en"/>
+        <classes>
+            <class name="tests.LanguageFieldTest">
+                <methods>
+                    <include name="DefaultLanguage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -15,8 +15,9 @@ gradle-app.setting
 /chromedriver.exe
 /geckodriver.exe
 /allure-results/
-/allure-reports/
+/allure-report/
 /.idea/
 '.idea' 
 /gradle/
 /screenshots/
+

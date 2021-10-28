@@ -17,7 +17,8 @@ dependencies {
 
 task runTests(type: Test) {
     useTestNG() {
-        suites "email.xml"
+        suites "parametersXml/email.xml"
+        suites "parametersXml/language.xml"
     }
     systemProperties project.properties.subMap(["browser"])
 }

@@ -10,6 +10,9 @@ import java.util.Properties;
 
 public class RegistrationPage extends BasePage{
 
+    @FindBy(xpath = "//*[@name='language']")
+    WebElement languageSelect;
+
     @FindBy(xpath = "//input[@name='email']")
     WebElement emailField;
 
@@ -25,6 +28,10 @@ public class RegistrationPage extends BasePage{
 
     public void fillEmailField (String text) {
         emailField.sendKeys(text);
+    }
+
+    public String getLanguageOption () {
+        return languageSelect.getAttribute("value");
     }
 
     public String getErrorHintEmail () {
